@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Copy package files trước (tận dụng Docker layer cache)
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy source code
 COPY index.js .
